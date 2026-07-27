@@ -4,6 +4,8 @@ norss = true
 showDate = false
 toc = false
 +++
+Healthy mix of existential horror fiction, political and academic literature and things my friends asked me to read.
+
 ---
 ## Things I've read:
 ---
