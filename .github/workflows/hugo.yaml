@@ -22,23 +22,18 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HUGO_VERSION: 0.128.0
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com{{ HUGO_VERSION }}/hugo_extended_${{ HUGO_VERSION }}/hugo_extended_${{ HUGO_VERSION }}_linux-amd64.deb || wget -O ${{ runner.temp }}/hugo.deb https://github.com{{ HUGO_VERSION }}/hugo_extended_${{ HUGO_VERSION }}_linux-amd64.deb
-          # Fallback in case official release path naming varies slightly:
-          if [ ! -f ${{ runner.temp }}/hugo.deb ]; then
-            wget -O ${{ runner.temp }}/hugo.deb https://github.com{{ HUGO_VERSION }}/hugo_${{ HUGO_VERSION }}_linux-amd64.deb
-          fi
-          sudo dpkg -i ${{ runner.temp }}/hugo.deb          
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.128.0'
+          extended: true
 
       - name: Setup Pages
         id: pages
@@ -46,14 +41,14 @@ jobs:
 
       - name: Build with Hugo
         env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
           hugo \
             --gc \
             --minify \
             --buildDrafts \
-            --buildFuture          
+            --buildFuture \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
