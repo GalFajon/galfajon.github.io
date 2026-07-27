@@ -1,0 +1,4 @@
+{{ $quotes := site.Data.quotes.quotes }}
+{{ $random := index $quotes (mod now.Unix (len $quotes)) }}
+
+<small>{{ $random }}</small>
