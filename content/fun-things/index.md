@@ -15,6 +15,11 @@ The stuff one has on in the background.
 - [Song Exploder](https://open.spotify.com/show/10lMwCjvzLCLwth2AW6cLG?si=e57adba66447474f) - Podcast about how hit songs were written. Gives a great insight into the creative process.
 - [You're wrong about](https://open.spotify.com/show/1RefFgQB4Lrl7qczcTWA3o?si=c72fa68844674404) - Podcast about media scandals and the response of the general public.
 ---
+## Talks:
+Knowledge for your headtop.
+- [The Birth and Death of JavaScript](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript)
+- [The Big OOPs: Anatomy of a Thirty-five-year Mistake](https://www.youtube.com/watch?v=wo84LFzx5nI)
+---
 ## Tinkering:
 Random stuff I'm researching.
 - [ComfyUI](https://comfy.org/) - Currently building an image -> 2D concept art -> 3D model pipeline in this for future gamedev.

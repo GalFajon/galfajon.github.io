@@ -22,6 +22,7 @@ toc = false
 
 ---
 ### Recent listens and ratings:
+- Sidewalks and Skeletons - Exorcism - 7/10
 - Hayley Williams - Ego Death at a Bachelorette Party - 5/10
 - Halsley - The Great Impersonator - 5-6/10
 - Kehlani - Kehlani - 7/10
