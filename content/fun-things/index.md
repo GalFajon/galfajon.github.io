@@ -26,3 +26,8 @@ Random stuff I'm researching.
 - [Boids](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2008-09/modeling-natural-systems/boids.html) - Article on an artificial life simulation. Useful for modelling crowd movements/traffic etc.
 - [Worldsmith](https://www.zero.re/worldsmith/) - Series of articles about world generation and the random algorithms used.
 - [Supabase](https://supabase.com/) - Basically a ready-made backend for web apps.
+
+---
+## Conferences & events:
+- [39C3](https://media.ccc.de/c/39c3) - Hacker conference with some great talks.
+- [WHY](https://why2025.org/) - Ditto.
