@@ -1,22 +1,24 @@
 default: dark
 auto_switch: false
+
 dark:
-  bg: '#160d18'
-  hl_bg: '#331E36'
-  fg: '#f4f2f5'
-  dim_fg: '#CAC4CE'
-  stroke: '#4a304e'
-  accent: '#CAC4CE'
+  bg: '#282a36'
+  hl_bg: '#44475a'
+  fg: '#f8f8f2'
+  dim_fg: '#6272a4'
+  stroke: '#44475a'
+  accent: '#bd93f9'
   sidebar:
-    bg: '#241526'
-    fg: '#f4f2f5'
+    bg: '#21222c'
+    fg: '#f8f8f2'
+
 light:
-  bg: '#fcfbfd'
-  hl_bg: '#f0edf2'
-  fg: '#1a101b'
-  dim_fg: '#6b5a70'
-  stroke: '#CAC4CE'
-  accent: '#331E36'
+  bg: '#f8f8f2'
+  hl_bg: '#e8e8e8'
+  fg: '#282a36'
+  dim_fg: '#6272a4'
+  stroke: '#d0d0d0'
+  accent: '#bd93f9'
   sidebar:
-    bg: '#CAC4CE'
-    fg: '#1a101b'
+    bg: '#e8e8e8'
+    fg: '#282a36'
