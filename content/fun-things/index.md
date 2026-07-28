@@ -29,5 +29,6 @@ Random stuff I'm researching.
 
 ---
 ## Conferences & events:
+Real world physical interaction opportunities I occasionally engage in.
 - [39C3](https://media.ccc.de/c/39c3) - Hacker conference with some great talks.
 - [WHY](https://why2025.org/) - Ditto.
