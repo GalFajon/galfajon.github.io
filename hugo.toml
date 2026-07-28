@@ -15,7 +15,7 @@ summaryLength = 70  # number of words for article summaries
     pagerSize = 5  # number of articles per page in the index
 
 [params]
-    description = "Super poseben kotiček interneta."  # this will be added as metadata
+    description = "A special corner of the internet."  # this will be added as metadata
 
     posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
     showPostsLink = false  # show or hide the link to the simple post list
