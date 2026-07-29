@@ -1,2 +1,4 @@
-./public
-./resources
+# build output - CI runs hugo itself, so none of this belongs in the repo
+public/
+resources/
+.hugo_build.lock

@@ -1,0 +1,14 @@
+{{/* Renders a section as a regular page: the theme's own list.html drops the
+     page body and only prints an auto-generated list of children. Here the
+     body is rendered like any other page, and leaf child pages are listed
+     after it (nested sections are expected to be linked from the body). */}}
+{{- partial "single_post.html" . -}}
+{{ with sort (where .Pages "Kind" "page") "Title" }}
+    <ul class="list">
+        {{ range . }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}

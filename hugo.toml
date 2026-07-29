@@ -144,21 +144,16 @@ summaryLength = 70  # number of words for article summaries
         weight = 2
     
     [[menu.main]]
-        identifier = "reading-list"
-        name = "Reading list"
-        url = "/reading-list"
+        identifier = "lecturenotes"
+        name = "Lecture notes"
+        url = "/lecture-notes"
         weight = 3
 
+    # reading list, music and fun stuff live under here as subpages
     [[menu.main]]
-        identifier = "music"
-        name = "Music"
-        url = "/music"
-        weight = 4
-
-    [[menu.main]]
-        identifier = "funstuff"
-        name = "Fun stuff"
-        url = "/fun-things"
+        identifier = "misc"
+        name = "Misc."
+        url = "/misc"
         weight = 4
 
     # these links will be added to the main navigation menu, sorted by weight
@@ -176,3 +171,15 @@ summaryLength = 70  # number of words for article summaries
 # it allows to output the article list as paged JSON so that "pages" can be retrieved via javascript
 [outputs]
     home = ["HTML", "JSON"]
+
+# hand LaTeX between these delimiters straight through to MathJax instead of
+# letting goldmark mangle it (the MathJax script itself is loaded in
+# layouts/partials/inject/head.html, only on pages with math = true)
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+            [markup.goldmark.extensions.passthrough]
+                enable = true
+                [markup.goldmark.extensions.passthrough.delimiters]
+                    block = [['\[', '\]'], ['$$', '$$']]
+                    inline = [['\(', '\)'], ['$', '$']]
