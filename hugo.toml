@@ -133,7 +133,7 @@ summaryLength = 70  # number of words for article summaries
 [menu]
     [[menu.main]]
         identifier = "posts"
-        name = "Posts"
+        name = "Blog"
         url = "/posts"
         weight = 1
 

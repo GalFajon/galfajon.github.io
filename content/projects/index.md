@@ -6,6 +6,8 @@ toc = false
 +++
 ---
 ## Personal
+TBD
+
 ---
 ## Game development
 - [Untangle](https://galfajon.itch.io/untangle) - Graph theory puzzle game, made in Unity for Android
@@ -15,3 +17,4 @@ toc = false
 - [Development of a web tool for drawing three-dimensional geometries on point clouds and 3D models](https://repozitorij.uni-lj.si/Dokument.php?id=213249&lang=slv)
 ---
 ## Work
+TBD
