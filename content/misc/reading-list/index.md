@@ -24,6 +24,8 @@ Healthy mix of existential horror fiction, political and academic literature and
 ### Fiction:
 - Audition - Ryu Murakami
 - In The Miso Soup - Ryu Murakami
+- Closer - Dennis Cooper
+- Sluts - Dennis Cooper
 
 ---
 ## Things I've yet to read:
