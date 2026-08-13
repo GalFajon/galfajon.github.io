@@ -22,8 +22,9 @@ toc = false
 
 ---
 ### Recent listens and ratings:
-- Sidewalks and Skeletons - Exorcism - 7/10
-- Hayley Williams - Ego Death at a Bachelorette Party - 5/10
-- Halsley - The Great Impersonator - 5-6/10
-- Kehlani - Kehlani - 7/10
-- Kendrick Lamar - GNX - 7/10
+13.08.2026 - Phoebe Bridgers - Punisher - 8/10
+01.08.2026 - Sidewalks and Skeletons - Exorcism - 7/10
+01.08.2026 - Hayley Williams - Ego Death at a Bachelorette Party - 5/10
+01.08.2026 - Halsley - The Great Impersonator - 5-6/10
+01.08.2026 - Kehlani - Kehlani - 7/10
+01.08.2026 - Kendrick Lamar - GNX - 7/10
