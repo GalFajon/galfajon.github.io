@@ -1,24 +1,27 @@
-default: dark
-auto_switch: false
-
-dark:
-  bg: '#282a36'
-  hl_bg: '#44475a'
-  fg: '#f8f8f2'
-  dim_fg: '#6272a4'
-  stroke: '#44475a'
-  accent: '#bd93f9'
-  sidebar:
-    bg: '#21222c'
-    fg: '#f8f8f2'
+# Monochrome palette: paper-white by default, ink-black in dark mode.
+# `accent` is used by the theme for heading links, icon hovers and link
+# underlines on hover, so it is the strongest ink available rather than a hue.
+default: light
+auto_switch: true
 
 light:
-  bg: '#f8f8f2'
-  hl_bg: '#e8e8e8'
-  fg: '#282a36'
-  dim_fg: '#6272a4'
-  stroke: '#d0d0d0'
-  accent: '#bd93f9'
+  bg: '#ffffff'
+  hl_bg: '#f2f2f0'
+  fg: '#111111'
+  dim_fg: '#5c5c5c'
+  stroke: '#d6d6d2'
+  accent: '#000000'
   sidebar:
-    bg: '#e8e8e8'
-    fg: '#282a36'
+    bg: '#f2f2f0'
+    fg: '#111111'
+
+dark:
+  bg: '#0e0e0e'
+  hl_bg: '#1b1b1b'
+  fg: '#ececec'
+  dim_fg: '#9a9a9a'
+  stroke: '#2f2f2f'
+  accent: '#ffffff'
+  sidebar:
+    bg: '#151515'
+    fg: '#ececec'

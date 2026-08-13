@@ -15,7 +15,8 @@ summaryLength = 70  # number of words for article summaries
     pagerSize = 5  # number of articles per page in the index
 
 [params]
-    description = "A special corner of the internet."  # this will be added as metadata
+    # this is the meta description search engines show under the result
+    description = "Gal Fajon — GIS and fullstack web developer. Writing about code, mathematics, books and music."
 
     posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
     showPostsLink = false  # show or hide the link to the simple post list
@@ -28,13 +29,17 @@ summaryLength = 70  # number of words for article summaries
     showSinglePageAsHome = true
     homeSinglePage = "/home"
 
-    # It's best to put these icons in the "static" folder of your site
+    # It's best to put these icons in the "static" folder of your site.
+    # These MUST be set: left empty, the theme falls back to its own
+    # /favicon.png, which is what search engines end up indexing.
     logo = ""
-    favicon = ""  # 32x32
-    faviconIco = ""  # 32x32
-    appletouch = ""  # 180x180
-    svgicon = ""
-    icon512 = ""  # 512x512 png image
+    # Google wants an indexable favicon that is a square multiple of 48px, so
+    # rel="icon" points at the 192px raster rather than the 32px one
+    favicon = "/android-chrome-192x192.png"
+    faviconIco = "/favicon.ico"  # 32x32
+    appletouch = "/apple-touch-icon.png"  # 180x180
+    svgicon = "/typewriter.svg"
+    icon512 = "/android-chrome-512x512.png"  # 512x512 png image
 
     logoRightOfTitle = false  # positions the logo to the right of the title; default: false
 
@@ -54,7 +59,9 @@ summaryLength = 70  # number of words for article summaries
     mainFontSizeMultiplier = 1.0
     monoFontSizeMultiplier = 1.0
 
-    contentWidth = "1000px"  # maximum width of the site content, css syntax
+    # narrower measure than the theme default: 1000px of monospace text is
+    # ~120 characters per line, well past comfortable reading width
+    contentWidth = "820px"  # maximum width of the site content, css syntax
 
     paperCards = false  # enable paper card style; default false
     buttonTags = false  # enable button tag style; default false

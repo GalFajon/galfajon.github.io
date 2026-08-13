@@ -18,14 +18,79 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{ end }}
 
-{{/* Tabler Icons webfont, for the bat next to the site title (.ti-bat) */}}
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
-
+{{/* Monochrome, print-shop refinements on top of the theme. Everything here is
+     colour-agnostic: it reads from the theme's CSS variables so it holds up in
+     both light and dark mode. */}}
 <style>
-    .batIcon {
-        margin-right: 0.45ch;
-        font-size: 0.95em;
-        vertical-align: -0.05em;
+    /* typewriter mark next to the site title */
+    .typewriterGlyph {
+        width: 1.05em;
+        height: 1.05em;
+        margin-right: 0.5ch;
+        vertical-align: -0.13em;
+    }
+
+    /* inverse-video selection: accent is near-black/near-white here, so the
+       theme's default (accent background, fg text) would be unreadable */
+    ::selection, ::-moz-selection {
+        background: var(--default_fg);
+        color: var(--default_bg);
+    }
+
+    /* comfortable measure for long-form text set in a monospace face */
+    article, .card.single .content {
+        line-height: 1.7;
+    }
+
+    /* quotes as a margin rule rather than a coloured box */
+    blockquote {
+        margin-left: 0;
+        padding-left: 1.2em;
+        border-left: 2px solid var(--default_stroke);
+        color: var(--default_dim_fg);
+        font-style: normal;
+    }
+
+    /* code: outlined, not tinted */
+    pre {
+        border: 1px solid var(--default_stroke);
+        border-radius: 2px;
+        padding: 0.9em 1em;
+        overflow-x: auto;
+    }
+    :not(pre) > code {
+        border: 1px solid var(--default_stroke);
+        border-radius: 2px;
+        padding: 0.05em 0.3em;
+    }
+
+    /* hairline rules instead of thick grey bars */
+    hr {
+        border: none;
+        border-top: 1px solid var(--default_stroke);
+    }
+
+    /* links: underline that sits clear of the descenders */
+    article a, .content a {
+        text-underline-offset: 0.2em;
+    }
+
+    /* tables read as a printed grid */
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid var(--default_stroke);
+        padding: 0.4em 0.6em;
+    }
+    th {
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* the icon-link row is empty (RSS is off, no menu.icons), so it only
+       leaves a gap under the masthead — collapse it while it has no children */
+    header #links:not(:has(*)) {
+        display: none;
     }
 </style>

@@ -1,4 +1,5 @@
-{{ $quotes := site.Data.quotes.quotes }}
-{{ $random := index $quotes (mod now.Unix (len $quotes)) }}
-
-<small>{{ $random }}</small>
+{{ $quotes := where (site.Data.quotes.quotes | default slice) "!=" "" }}
+{{ with $quotes }}
+    {{ $random := index . (mod now.Unix (len .)) }}
+    <small class="siteQuote">{{ $random }}</small>
+{{ end }}

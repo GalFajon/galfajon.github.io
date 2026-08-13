@@ -1,0 +1,19 @@
+{{/* Copy of the theme partial, with one fix: the theme prints
+     `.Site.Params.Author`, which is a map here ([params.author] has name and
+     email, as the RSS templates require), so the rendered tag came out as
+     `content="map[email:... name:...]"`. Use the name field instead. */}}
+<meta name="author" content="{{ .Site.Params.Author.name | default .Site.Params.Author }}" />
+{{ if .IsPage }}
+    {{ if .Params.tags }}
+        <meta name="keywords" content='{{ delimit (sort .Params.tags) ", "}}' />
+    {{ end }}
+    {{ if .Params.description }}
+        <meta name="description" content="{{ .Params.description }}" />
+    {{ else }}
+        <meta name="description" content="{{ substr .Summary 20 }}" />
+    {{ end }}
+{{ else }}
+    {{ if .Site.Params.description }}
+        <meta name="description" content="{{ .Site.Params.description }}" />
+    {{ end }}
+{{ end }}
