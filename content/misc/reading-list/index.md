@@ -26,6 +26,7 @@ Healthy mix of existential horror fiction, political and academic literature and
 - In The Miso Soup - Ryu Murakami
 - Closer - Dennis Cooper
 - Sluts - Dennis Cooper
+- The Stranger - Albert Camus
 
 ---
 ## Things I've yet to read:
