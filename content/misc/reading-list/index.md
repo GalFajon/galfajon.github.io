@@ -42,5 +42,8 @@ Healthy mix of existential horror fiction, political and academic literature and
 - Gravity's rainbow - Thomas Pynchon
 - Neuromancer - William Gibson
 
+## Autobiographical:
+- How I Escaped My Certain Fate - Stewart Lee
+
 ### Psychology:
 - The problem of the puer aeternus - Marie-Luise von Franz
