@@ -1,0 +1,32 @@
+{{/* Chronological log listing for the "blog-shaped" sections (music, reading
+     list). Renders the section's own body first (favorites, to-read queue,
+     intro), then every leaf child newest-first, grouped by month.
+
+     Params:
+       Page     the section page
+       Kind     "music" | "book" — picks which front matter to show per row
+       LogTitle heading shown above the log */}}
+{{- $page := .Page -}}
+{{- $kind := .Kind -}}
+{{- partial "single_post.html" $page -}}
+{{- with where $page.Pages "Kind" "page" }}
+    <h3 class="logHeading">{{ $.LogTitle }}</h3>
+    {{ range .GroupByDate "January 2006" }}
+        <h4 class="logMonth">{{ .Key }}</h4>
+        <ul class="logList">
+            {{ range .Pages }}
+                <li>
+                    <span class="date">{{- partial "date.html" .Date -}}</span>
+                    <span class="logEntry">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        {{ if eq $kind "music" }}
+                            {{ with .Params.rating }}<span class="logMeta">{{ . }}/10</span>{{ end }}
+                        {{ else }}
+                            {{ with .Params.author }}<span class="logMeta">{{ . }}</span>{{ end }}
+                        {{ end }}
+                    </span>
+                </li>
+            {{ end }}
+        </ul>
+    {{ end }}
+{{ end }}

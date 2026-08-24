@@ -1,3 +1,5 @@
 {{ define "main" }}
-    {{- partial "section_page.html" . -}}
+    {{/* The subpages are linked from the body (two of them are sections of
+         their own, which the generic auto-list skips), so no generated list. */}}
+    {{- partial "single_post.html" . -}}
 {{ end }}

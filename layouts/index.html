@@ -1,0 +1,44 @@
+{{ define "main" }}
+    {{/* Overrides the theme's index.html: keeps the single-page home (About me)
+         but appends three digest blocks underneath it. */}}
+    {{- partial "showcase.html" . -}}
+
+    {{ $postsDir := .Site.Params.Posts | default (slice "posts" "post") }}
+    {{ $posts := where (where site.RegularPages "Section" "in" $postsDir) "Section" "!=" "" }}
+
+    {{ if and .Site.Params.showSinglePageAsHome (ne .Site.Params.homeSinglePage "") }}
+        {{ with .Site.GetPage .Site.Params.homeSinglePage }}
+            {{- partial "single_post.html" . -}}
+        {{ end }}
+    {{ else }}
+        {{- partial "home_post_list.html" (dict "Ctx" . "AllPostsList" $posts) -}}
+    {{ end }}
+
+    {{- partial "home_recent.html" (dict
+        "Title" "Newest blog posts"
+        "Pages" (sort $posts "Date" "desc")
+        "Limit" 3
+        "Kind" "post"
+        "MoreURL" "/posts/"
+        "MoreText" "All posts") -}}
+
+    {{ with .Site.GetPage "/misc/reading-list" }}
+        {{- partial "home_recent.html" (dict
+            "Title" "Recently read"
+            "Pages" (sort (where .Pages "Kind" "page") "Date" "desc")
+            "Limit" 5
+            "Kind" "book"
+            "MoreURL" .RelPermalink
+            "MoreText" "Full reading list") -}}
+    {{ end }}
+
+    {{ with .Site.GetPage "/misc/music" }}
+        {{- partial "home_recent.html" (dict
+            "Title" "Recently listened to"
+            "Pages" (sort (where .Pages "Kind" "page") "Date" "desc")
+            "Limit" 5
+            "Kind" "music"
+            "MoreURL" .RelPermalink
+            "MoreText" "Full listening log") -}}
+    {{ end }}
+{{ end }}

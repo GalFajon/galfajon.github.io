@@ -1,0 +1,7 @@
+{{ define "main" }}
+    {{- partial "log_list.html" (dict "Page" . "Kind" "book" "LogTitle" "Things I've read") -}}
+    {{ with .Params.queue }}
+        <h2>Things I've yet to read</h2>
+        {{ . | markdownify }}
+    {{ end }}
+{{ end }}

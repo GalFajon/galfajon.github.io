@@ -1,0 +1,32 @@
+{{/* One "recently ..." block on the home page: a heading, a short list of
+     newest entries, and a link through to the full section.
+
+     Params:
+       Title    heading text
+       Pages    already-sorted page slice
+       Limit    how many rows to show
+       Kind     "music" | "book" | "post" — picks the trailing meta per row
+       MoreURL  link to the full section
+       MoreText label for that link */}}
+{{- $kind := .Kind -}}
+{{- with first (.Limit | default 5) .Pages }}
+    <section class="homeRecent">
+        <h2>{{ $.Title }}</h2>
+        <ul class="logList">
+            {{ range . }}
+                <li>
+                    <span class="date">{{- partial "date.html" .Date -}}</span>
+                    <span class="logEntry">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        {{ if eq $kind "music" }}
+                            {{ with .Params.rating }}<span class="logMeta">{{ . }}/10</span>{{ end }}
+                        {{ else if eq $kind "book" }}
+                            {{ with .Params.author }}<span class="logMeta">{{ . }}</span>{{ end }}
+                        {{ end }}
+                    </span>
+                </li>
+            {{ end }}
+        </ul>
+        <p class="homeRecentMore"><a href="{{ $.MoreURL }}">{{ $.MoreText }} →</a></p>
+    </section>
+{{ end }}

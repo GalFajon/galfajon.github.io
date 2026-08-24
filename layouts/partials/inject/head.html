@@ -88,6 +88,68 @@
         text-align: left;
     }
 
+    /* log sections (listening log, reading list) and the home page digests:
+       a date column against a title, set as a printed index rather than cards */
+    .logHeading {
+        margin-top: 2em;
+    }
+    .logMonth {
+        margin: 1.6em 0 0.4em;
+        color: var(--default_dim_fg);
+        font-weight: normal;
+    }
+    ul.logList {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    ul.logList > li {
+        display: grid;
+        grid-template-columns: 7.5em 1fr;
+        gap: 0 1ch;
+        padding: 0.25em 0;
+        border-bottom: 1px solid var(--default_stroke);
+    }
+    ul.logList .date {
+        color: var(--default_dim_fg);
+        white-space: nowrap;
+    }
+    ul.logList .logMeta {
+        color: var(--default_dim_fg);
+    }
+    ul.logList .logMeta::before {
+        content: " — ";
+    }
+    @media screen and (max-width: 500px) {
+        ul.logList > li {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .homeRecent {
+        margin-top: 2.5em;
+    }
+    .homeRecent h2 {
+        margin-bottom: 0.6em;
+    }
+    .homeRecentMore {
+        margin-top: 0.7em;
+    }
+
+    /* front matter facts on a single log entry */
+    dl.logFacts {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 0.2em 1.5ch;
+        margin: 1em 0;
+    }
+    dl.logFacts dt {
+        color: var(--default_dim_fg);
+    }
+    dl.logFacts dd {
+        margin: 0;
+    }
+
     /* the icon-link row is empty (RSS is off, no menu.icons), so it only
        leaves a gap under the masthead — collapse it while it has no children */
     header #links:not(:has(*)) {
