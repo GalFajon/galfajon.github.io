@@ -1,0 +1,14 @@
+# Consumed by the moonwalk theme's own layouts (the credits line, mainly).
+# Everything this site renders itself is configured in hugo.toml.
+author = 'Gal Fajon'
+
+[home]
+	date_format = '2006-01-02'
+	portfolio = false
+	blog = true
+	old_projects = false
+
+[blog]
+	date_format = '2006-01-02'
+	[blog.posts]
+		date_format = '2006-01-02'

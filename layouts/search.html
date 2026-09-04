@@ -1,0 +1,55 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <noscript><p>Search needs JavaScript enabled.</p></noscript>
+    <form class="search-form" role="search" onsubmit="return false;">
+        <label for="searchbar">Search this site</label>
+        <input type="search" id="searchbar" name="q" autocomplete="off" autofocus
+               placeholder="title, tag or text…" />
+    </form>
+    <div id="searchresults" aria-live="polite"></div>
+    <script>
+        (function () {
+            var input = document.getElementById('searchbar');
+            var out = document.getElementById('searchresults');
+            var index = null;
+
+            function render(pages, term) {
+                if (!term) { out.innerHTML = ''; return; }
+                if (!pages.length) { out.innerHTML = '<p>No results found.</p>'; return; }
+                var items = pages.map(function (p) {
+                    return '<li><span class="entry-date">' + (p.date || '') + '</span>' +
+                        '<span class="entry-body"><a href="' + p.permalink + '">' + p.title + '</a></span></li>';
+                }).join('');
+                out.innerHTML = '<ul class="entry-list">' + items + '</ul>';
+            }
+
+            function search(term) {
+                term = term.trim().toLowerCase();
+                if (!term) { render([], term); return; }
+                var hits = index.filter(function (p) {
+                    return p.title.toLowerCase().indexOf(term) !== -1 ||
+                        (p.tags || []).some(function (t) { return t.toLowerCase().indexOf(term) !== -1; }) ||
+                        (p.text || '').toLowerCase().indexOf(term) !== -1;
+                });
+                render(hits, term);
+            }
+
+            function withIndex(fn) {
+                if (index) { fn(); return; }
+                fetch('{{ "index.json" | relURL }}')
+                    .then(function (r) { return r.json(); })
+                    .then(function (data) { index = data.pages; fn(); })
+                    .catch(function () { out.innerHTML = '<p>Could not load the search index.</p>'; });
+            }
+
+            input.addEventListener('input', function () {
+                var term = input.value;
+                withIndex(function () { search(term); });
+            });
+
+            var q = new URLSearchParams(location.search).get('q');
+            if (q) { input.value = q; withIndex(function () { search(q); }); }
+        })();
+    </script>
+{{ end }}

@@ -1,0 +1,15 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.showDate | default true }}
+        <p class="post-date">{{ partial "date.html" .Date }}</p>
+    {{ end }}
+    {{ if .Params.toc | default false }}
+        <nav class="toc" aria-label="Table of contents">{{ .TableOfContents }}</nav>
+    {{ end }}
+    {{ .Content }}
+    {{ with .Params.tags }}
+        <p class="tags">
+            {{ range sort . }}<a class="tag" href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        </p>
+    {{ end }}
+{{ end }}

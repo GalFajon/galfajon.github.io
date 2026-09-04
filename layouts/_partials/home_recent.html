@@ -1,0 +1,22 @@
+{{/* The digest of newest posts shown under the home page blurb.
+
+     Params:
+       Title    heading text
+       Pages    already-sorted page slice
+       Limit    how many rows to show
+       MoreURL  link to the full section
+       MoreText label for that link */}}
+{{- with first (.Limit | default 5) .Pages }}
+    <section class="home-recent">
+        <h2>{{ $.Title }}</h2>
+        <ul class="entry-list">
+            {{ range . }}
+                <li>
+                    <span class="entry-date">{{ partial "date.html" .Date }}</span>
+                    <span class="entry-body"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+                </li>
+            {{ end }}
+        </ul>
+        <p class="more-link"><a href="{{ $.MoreURL }}">{{ $.MoreText }} →</a></p>
+    </section>
+{{ end }}

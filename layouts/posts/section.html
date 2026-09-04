@@ -1,0 +1,12 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <ul class="entry-list">
+        {{ range sort .Pages "Date" "desc" }}
+            <li>
+                <span class="entry-date">{{ partial "date.html" .Date }}</span>
+                <span class="entry-body"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}

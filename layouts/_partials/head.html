@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s – %s" .Title site.Title }}{{ end }}</title>
+
+{{ partial "head_meta_seo.html" . }}
+{{ partial "head_meta_opengraph.html" . }}
+{{ partial "head_icons.html" . }}
+
+{{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
+{{ end -}}
+
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
+
+{{/* MathJax, loaded only on pages that ask for it with `math = true` in the
+     front matter (the lecture-notes section cascades it to every child) */}}
+{{ if or .Params.math site.Params.math }}
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\(', '\)']],
+                displayMath: [['$$', '$$'], ['\[', '\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{ end }}

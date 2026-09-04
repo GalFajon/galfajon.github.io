@@ -1,0 +1,18 @@
+<meta property="og:site_name" content='{{ site.Title }}' />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ $image := site.Params.icon512 | default "/favicon.png" }}
+{{ if .IsPage }}
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content="{{ site.Params.Author.name | default site.Params.Author }}" />
+    <meta property="article:published_time" content='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}' />
+    {{ range sort (.Params.tags | default slice) }}
+        <meta property="article:tag" content="{{ . }}" />
+    {{ end }}
+    <meta property="og:description" content="{{ partial "meta_description.html" . }}" />
+{{ else }}
+    <meta property="og:title" content='{{ .Title | default site.Title }}' />
+    <meta property="og:type" content="blog" />
+    <meta property="og:description" content="{{ .Params.description | default site.Params.description }}" />
+{{ end }}
+<meta property="og:image" content="{{ $image | absURL }}" />

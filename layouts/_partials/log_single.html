@@ -1,0 +1,19 @@
+{{/* Single entry in a log section: an album listen or a finished book. The
+     body is usually empty for now, so the front matter carries the content. */}}
+{{- $kind := .Kind -}}
+{{- with .Page -}}
+    <h1>{{ .Title }}</h1>
+    <p class="post-date">{{ partial "date.html" .Date }}</p>
+    <dl class="log-facts">
+        {{ if eq $kind "music" }}
+            {{ with .Params.artist }}<dt>Artist</dt><dd>{{ . }}</dd>{{ end }}
+            {{ with .Params.album }}<dt>Album</dt><dd>{{ . }}</dd>{{ end }}
+            {{ with .Params.rating }}<dt>Rating</dt><dd>{{ . }}/10</dd>{{ end }}
+        {{ else }}
+            {{ with .Params.author }}<dt>Author</dt><dd>{{ . }}</dd>{{ end }}
+            {{ with .Params.category }}<dt>Shelf</dt><dd>{{ . }}</dd>{{ end }}
+        {{ end }}
+    </dl>
+    {{ .Content }}
+    <p class="more-link"><a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a></p>
+{{- end -}}

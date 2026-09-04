@@ -1,187 +1,71 @@
 baseURL = "https://galfajon.github.io/"
-theme = "hugo-ficurinia"
-title = "Gal Fajon"
+theme = "moonwalk-hugo"
 locale = "en"
 defaultContentLanguage = "en"
+title = "Gal Fajon"
 
-# this will be included in the footer after the current year the site is last
-# built, followed by the (c) symbol
-# you can use markdown inside this field
+# printed in the footer after the current year, followed by the (c) symbol
 copyright = "Gal Fajon"
 
 summaryLength = 70  # number of words for article summaries
 
 [pagination]
-    pagerSize = 5  # number of articles per page in the index
+    pagerSize = 10  # number of articles per page in the blog list
 
 [params]
-    # this is the meta description search engines show under the result
+    # meta description search engines show under the result
     description = "Gal Fajon — GIS and fullstack web developer. Writing about code, mathematics, books and music."
 
-    posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
-    showPostsLink = false  # show or hide the link to the simple post list
-    extraContentDirs = []  # other content directories to render similarly to the home page
-    showcaseDir = "showcase"  # create a content directory that shows a special showcase section in the home page
-
-    # shows a specified single page as a home page, instead of the traditional articles list
-    # requires setting `homeSinglePage`
-    # goes well with extraContentDirs
-    showSinglePageAsHome = true
-    homeSinglePage = "/home"
-
-    # It's best to put these icons in the "static" folder of your site.
-    # These MUST be set: left empty, the theme falls back to its own
-    # /favicon.png, which is what search engines end up indexing.
-    logo = ""
     # Google wants an indexable favicon that is a square multiple of 48px, so
-    # rel="icon" points at the 192px raster rather than the 32px one
+    # rel="icon" points at the 192px raster rather than the 32x32 one
     favicon = "/android-chrome-192x192.png"
     faviconIco = "/favicon.ico"  # 32x32
     appletouch = "/apple-touch-icon.png"  # 180x180
-    svgicon = "/typewriter.svg"
-    icon512 = "/android-chrome-512x512.png"  # 512x512 png image
-
-    logoRightOfTitle = false  # positions the logo to the right of the title; default: false
-
-    showTags = false  # show the Tags menu item; default true
-    showRss = false  # show the link for the RSS feed; default true
-
-    imageInArticlePreview = false  # show images in article preview; default false
-    fitImageInArticlePreview = false  # make article preview images fit the article preview instead of getting cropped
-    articleSummary = true  # show a summary in article preview; default true
-    
-    fontFamily = "JetBrains Mono"  # changes the font, default "JetBrains Mono"
-    titleFontFamily = "JetBrains Mono"  # font used for titles and headings
-    monospaceFontFamily = "JetBrains Mono"  # changes the monospace font for code, default "JetBrains Mono"
-
-    # multipliers applied to font sizes, useful for custom fonts that may be too big or too small
-    titleFontSizeMultiplier = 1.0
-    mainFontSizeMultiplier = 1.0
-    monoFontSizeMultiplier = 1.0
-
-    # narrower measure than the theme default: 1000px of monospace text is
-    # ~120 characters per line, well past comfortable reading width
-    contentWidth = "820px"  # maximum width of the site content, css syntax
-
-    paperCards = false  # enable paper card style; default false
-    buttonTags = false  # enable button tag style; default false
-    tagsInArticlePreview = false  # enable tags list in the article preview card
-    gridView = false  # show post list as a grid. goes well with paperCards
-    bigArticleTitle = false  # makes the title in the single article view bigger
-    navtype = "standard"  # changes the style of the pagination, available styles are: "standard", "circles"
-    enableShadow = false  # shows a shadow around some elements
-    menuStyle = "standard"  # changes the style of the main site navigation menu, available styles are: "standard", "buttons"
-    inputStyle = "standard" # changes the style of inputs (like the searchbar), available styles are: "standard", "buttons"
-
-    enableSearch = true  # enable search page
-    searchbarEverywhere = true  # if the searchbar should be shown in every page; requires enableSearch
-    searchMenuLink = false  # add a search link to the navigation menu; requires enableSearch
-    mobileHamburgerNav = true  # alternative hamburger menu layout for the main nav menu when screen is small
-
-    enableFeatured = false  # enable a particular view for articles marked as featured (featured: true in the article frontmatter)
-
-    underlineTitleLinks = false  # show an underline also for links that are titles
-
-    # enable comments support with commento using the script from your server
-    #commento = "https://example.com/js/commento.js"
-
-    # enable comments support with cactus comments (cactus.chat)
-    #cactusCommentsSiteName = "example.com"
-    #cactusCommentsServerName = "cactus.chat"
-    #cactusCommentsHomeserver = "https://matrix.cactus.chat:8448"
-
-    # enable analytics using Plausible
-    #plausibleScriptUrl = "https://something.com/..."
-    #plausibleDomain = "example.com"
-
-    # enable analytics using Umami
-    #umamiScriptUrl = "https://something.com/..."
-    #umamiWebsiteId = "example-tracking-code"
-
-    enableShareOnFediverse = false  # enable a button at the end of an article to share it on the fediverse
-    #fediverseAccount = "@username@instance.com"  # Automatically add your username under the post when anyone shares your articles
-    tocBeforeImage = false  # show the table of contents before the main article image; default false
-
-    # WARNING: deprecated! Use [[menu.icons]] instead, look below
-    # links = [
-    #     ["GitLab", "https://gitlab.com/gabmus"],
-    #     ["GNOME", "https://gitlab.gnome.org/gabmus"],
-    #     ["YouTube", "https://youtube.com/TechPillsNet"]
-    # ]
-
-    # you can customize all of the colors in this theme
-    # Colors are defined in data/colors.yml
-
-    # alternative sidebar layout
-    enableSidebarLayout = false
-    tocInSidebar = true  # if the sidebar is enbabled, show the TOC in the sidebar
-
-    # redirect to baseURL if current URL host doesn't match
-    # useful if deploying in gitlab pages with custom domain and don't want
-    # the username.gitlab.io/website url to persist
-    # this requires you to set baseURL (see above)
-    forceRedirect = false
-
-    infiniteScrolling = false  # activates infinite scrolling instead of regular pagination
-                               # NOTE: you need to enable JSON output for this to work!
-                               #       look at the [outputs] section below
-    enableFooterColumns = false  # activates footer columns, as described below
-    enableJumbotron = true  # enables jumbotron, as described below
-    # related articles will be selected randomly based on tags and shown at
-    # the bottom of the article, after the comments
-    enableRelatedArticles = false
-    relatedArticlesNum = 2  # how many related articles to show
-    randomRelated = false  # sorts related articles in random order (randomized at built time)
+    icon512 = "/android-chrome-512x512.png"  # used as the OpenGraph image
 
     [params.author]
     name = "Gal Fajon"
-    email = "gla.nojaf@gmail.com" # optional, you can omit this
+    email = "gla.nojaf@gmail.com"  # web master field in the RSS feed
 
-[menu]
-    [[menu.main]]
+[menus]
+    [[menus.main]]
         identifier = "posts"
         name = "Blog"
-        url = "/posts"
+        pageRef = "/posts"
         weight = 1
 
-    [[menu.main]]
+    [[menus.main]]
         identifier = "projects"
         name = "Projects"
-        url = "/projects"
+        pageRef = "/projects"
         weight = 2
-    
-    [[menu.main]]
+
+    [[menus.main]]
         identifier = "lecturenotes"
         name = "Lecture notes"
-        url = "/lecture-notes"
+        pageRef = "/lecture-notes"
         weight = 3
 
     # reading list, music and fun stuff live under here as subpages
-    [[menu.main]]
+    [[menus.main]]
         identifier = "misc"
         name = "Misc."
-        url = "/misc"
+        pageRef = "/misc"
         weight = 4
 
-    # these links will be added to the main navigation menu, sorted by weight
-    # other elements in this menu are added automatically from the "pages" folder
-    # the folder it will look into can be customized with the pages variable
-    # in params above
-    # these links (menu.icons) will be added as icon links below the main nav
-    #[[menu.icons]]
-    #    identifier = "gitlab"
-    #    name = "GitLab"
-    #    url = "https://gitlab.com/gabmus"
-    #    weight = 10
+    [[menus.main]]
+        identifier = "search"
+        name = "Search"
+        pageRef = "/search"
+        weight = 5
 
-# this section is necessary if you want infinite scrolling
-# it allows to output the article list as paged JSON so that "pages" can be retrieved via javascript
+# the JSON index the search page fetches
 [outputs]
-    home = ["HTML", "JSON"]
+    home = ["HTML", "RSS", "JSON"]
 
 # hand LaTeX between these delimiters straight through to MathJax instead of
 # letting goldmark mangle it (the MathJax script itself is loaded in
-# layouts/partials/inject/head.html, only on pages with math = true)
+# layouts/_partials/head.html, only on pages with math = true)
 [markup]
     [markup.goldmark]
         [markup.goldmark.extensions]

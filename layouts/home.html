@@ -1,0 +1,12 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+    {{ $posts := where site.RegularPages "Section" "posts" }}
+    {{- partial "home_recent.html" (dict
+        "Title" "Newest blog posts"
+        "Pages" (sort $posts "Date" "desc")
+        "Limit" 5
+        "MoreURL" "/posts/"
+        "MoreText" "All posts") -}}
+{{ end }}
