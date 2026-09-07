@@ -274,3 +274,76 @@ dl.log-facts dd { margin: 0; }
 		transition: none !important;
 	}
 }
+/* ---- home -------------------------------------------------------------- */
+
+.home-intro {
+	max-width: 46rem;
+	margin: 1.5em 0;
+}
+.home-intro p {
+	font-size: 1.05rem;
+	line-height: 1.7;
+}
+/* ---- project index and details ---------------------------------------- */
+.project-group {
+	margin-top: 2.4em;
+}
+.project-group > h2 {
+	border-bottom: 1px solid var(--rule);
+	font-size: 1rem;
+	letter-spacing: 0.04em;
+	margin-bottom: 0;
+	padding-bottom: 0.35em;
+	text-transform: uppercase;
+}
+.project-group .project-index {
+	margin-top: 0;
+}
+
+.project-index {
+	list-style: none;
+	margin: 2em 0 0;
+	padding: 0;
+}
+.project-index li {
+	border-bottom: 1px solid var(--rule);
+	margin: 0;
+}
+.project-index li:first-child {
+	border-top: 1px solid var(--rule);
+}
+.project-index a {
+	display: block;
+	font-size: 1.05rem;
+	font-weight: 700;
+	padding: 0.8em 0;
+	text-decoration: none;
+}
+.project-index a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+}
+.project-detail {
+	max-width: 44rem;
+}
+.project-detail .back-link {
+	font-size: 0.9rem;
+	margin-bottom: 1.4em;
+}
+.project-detail h1 {
+	line-height: 1.2;
+	margin-bottom: 0.8em;
+}
+.project-detail li {
+	line-height: 1.7;
+	margin-bottom: 0.55em;
+}
+
+@media screen and (max-width: 720px) {
+	.cv-intro {
+		margin-bottom: 2.2em;
+	}
+	.cv-meta {
+		gap: 0.35em;
+	}
+}

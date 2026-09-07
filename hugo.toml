@@ -14,7 +14,7 @@ summaryLength = 70  # number of words for article summaries
 
 [params]
     # meta description search engines show under the result
-    description = "Gal Fajon — GIS and fullstack web developer. Writing about code, mathematics, books and music."
+    description = "Gal Fajon — software engineer focused on full-stack, geospatial, 3D and CAD systems."
 
     # Google wants an indexable favicon that is a square multiple of 48px, so
     # rel="icon" points at the 192px raster rather than the 32x32 one
@@ -25,7 +25,7 @@ summaryLength = 70  # number of words for article summaries
 
     [params.author]
     name = "Gal Fajon"
-    email = "gla.nojaf@gmail.com"  # web master field in the RSS feed
+    email = "contact@galfajon.dev"  # web master field in the RSS feed
 
 [menus]
     [[menus.main]]
@@ -40,11 +40,6 @@ summaryLength = 70  # number of words for article summaries
         pageRef = "/projects"
         weight = 2
 
-    [[menus.main]]
-        identifier = "lecturenotes"
-        name = "Lecture notes"
-        pageRef = "/lecture-notes"
-        weight = 3
 
     # reading list, music and fun stuff live under here as subpages
     [[menus.main]]

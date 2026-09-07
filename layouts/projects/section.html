@@ -1,0 +1,20 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+    {{ $projects := .Pages.ByWeight }}
+    {{ range (slice "Professional" "Academic" "Game development") }}
+        {{ $category := . }}
+        {{ $items := where $projects "Params.category" $category }}
+        {{ with $items }}
+            <section class="project-group">
+                <h2>{{ $category }}</h2>
+                <ul class="project-index">
+                    {{ range . }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </section>
+        {{ end }}
+    {{ end }}
+{{ end }}
