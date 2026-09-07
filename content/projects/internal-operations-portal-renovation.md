@@ -8,4 +8,4 @@ toc = false
 +++
 Renovated a legacy company portal using Next.js, React, Material UI, Node.js, Express, PostgreSQL/PostGIS and Docker Compose.
 
-Built scheduled background jobs that periodically import worker, absence, invoice and attendance data from an existing company accounting system into PostgreSQL.
+Built scheduled background jobs that periodically imported worker, absence, invoice and attendance data from an existing company accounting system into PostgreSQL.
