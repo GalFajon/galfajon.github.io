@@ -14,7 +14,7 @@ summaryLength = 70  # number of words for article summaries
 
 [params]
     # meta description search engines show under the result
-    description = "Gal Fajon — software engineer focused on full-stack, geospatial, 3D and CAD systems."
+    description = "Gal Fajon — Software engineer"
 
     # Google wants an indexable favicon that is a square multiple of 48px, so
     # rel="icon" points at the 192px raster rather than the 32x32 one
