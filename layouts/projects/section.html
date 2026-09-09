@@ -3,7 +3,7 @@
     {{ .Content }}
 
     {{ $projects := .Pages.ByWeight }}
-    {{ range (slice "Professional" "Academic" "Game development") }}
+    {{ range (slice "Academic" "Professional" "Game development") }}
         {{ $category := . }}
         {{ $items := where $projects "Params.category" $category }}
         {{ with $items }}

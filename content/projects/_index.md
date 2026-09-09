@@ -5,4 +5,4 @@ norss = true
 showDate = false
 toc = false
 +++
-Selected professional, academic and personal work. Open a project to read the full description.
+Selected professional, academic and personal work. Open a project to read the full description and try a live demo if one exists.
