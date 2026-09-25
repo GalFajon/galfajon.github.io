@@ -2,4 +2,14 @@
     <div class="home-intro">
         {{ .Content }}
     </div>
+
+    {{ with .Site.GetPage "section" "posts" }}
+        {{ partial "home_recent.html" (dict
+            "Title" "Latest posts"
+            "Pages" (sort .RegularPages "Date" "desc")
+            "Limit" 5
+            "MoreURL" .RelPermalink
+            "MoreText" "View all posts"
+        ) }}
+    {{ end }}
 {{ end }}
