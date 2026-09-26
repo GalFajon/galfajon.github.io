@@ -4,7 +4,6 @@
 
 {{ partial "head_meta_seo.html" . }}
 {{ partial "head_meta_opengraph.html" . }}
-{{ partial "head_icons.html" . }}
 
 {{ range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
