@@ -40,6 +40,11 @@ summaryLength = 70  # number of words for article summaries
         pageRef = "/projects"
         weight = 2
 
+    [[menus.main]]
+        identifier = "cv"
+        name = "CV"
+        url = "https://assets.galfajon.dev/cv/cv.pdf"
+        weight = 3
 
     [[menus.main]]
         identifier = "search"
