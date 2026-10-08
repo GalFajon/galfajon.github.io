@@ -209,6 +209,45 @@ ul.entry-list > li:has(> .entry-body:only-child) {
 .more-link { margin-top: 0.8em; }
 .home-recent { margin-top: 2.5em; }
 
+/* ---- blog feed --------------------------------------------------------- */
+
+.blog-feed-intro { color: var(--text-secondary); margin: 0.8em 0 0; max-width: 38rem; }
+.blog-feed-item {
+	border-bottom: 1px solid var(--rule);
+	display: grid;
+	gap: 1.5em;
+	grid-template-columns: minmax(0, 1fr);
+	padding: 1.8em 0;
+}
+.blog-feed-item:has(.blog-feed-image) { grid-template-columns: minmax(0, 1fr) 11rem; }
+.blog-feed-copy { grid-column: 1; grid-row: 1; min-width: 0; }
+.blog-feed-copy time {
+	color: var(--text-secondary);
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+	font-size: 0.8rem;
+}
+.blog-feed-copy h2 { font-size: 1.45rem; line-height: 1.25; margin: 0.45em 0; }
+.blog-feed-copy h2 a { text-decoration: none; }
+.blog-feed-copy h2 a:hover { text-decoration: underline; }
+.blog-feed-copy p { color: var(--text-secondary); line-height: 1.55; margin: 0 0 0.8em; }
+.blog-feed-read { font-size: 0.87rem; font-weight: 700; text-underline-offset: 0.2em; }
+.blog-feed-image {
+	align-self: start;
+	background: var(--bg-secondary);
+	border: 1px solid var(--rule);
+	display: block;
+	grid-column: 2;
+	grid-row: 1;
+	overflow: hidden;
+}
+.blog-feed-image img { aspect-ratio: 4 / 3; display: block; height: auto; object-fit: cover; width: 100%; }
+
+@media screen and (max-width: 600px) {
+	.blog-feed-item:has(.blog-feed-image) { grid-template-columns: minmax(0, 1fr) 6.5rem; gap: 0.8em; }
+	.blog-feed-copy h2 { font-size: 1.2rem; }
+	.blog-feed-copy p { font-size: 0.93rem; }
+}
+
 /* ---- log entry facts --------------------------------------------------- */
 
 dl.log-facts {

@@ -1,12 +1,27 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-    <ul class="entry-list">
-        {{ range sort .Pages "Date" "desc" }}
-            <li>
-                <span class="entry-date">{{ partial "date.html" .Date }}</span>
-                <span class="entry-body"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
-            </li>
-        {{ end }}
-    </ul>
+    <section class="blog-feed" aria-labelledby="blog-feed-title">
+        <div class="blog-feed-list">
+            {{ range .RegularPages.ByDate.Reverse }}
+                {{ $post := . }}
+                {{ $images := findRE `(?m)^!\[[^]]*\]\(([^)]+)\)` .RawContent 1 }}
+                {{ $image := "" }}
+                {{ with $images }}
+                    {{ $image = replaceRE `^!\[[^]]*\]\(([^)]+)\)$` "$1" (index . 0) }}
+                {{ end }}
+                <article class="blog-feed-item">
+                    {{ with $image }}
+                        <a class="blog-feed-image" href="{{ $post.RelPermalink }}" aria-label="Read {{ $post.Title }}">
+                            <img src="{{ . | safeURL }}" alt="" loading="lazy">
+                        </a>
+                    {{ end }}
+                    <div class="blog-feed-copy">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date.html" .Date }}</time>
+                        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                        <p>{{ .Plain | truncate 190 }}</p>
+                        <a class="blog-feed-read" href="{{ .RelPermalink }}">Read post <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </section>
 {{ end }}
