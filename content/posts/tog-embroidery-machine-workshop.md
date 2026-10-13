@@ -2,6 +2,7 @@
 date = '2026-09-27T19:00:00+01:00'
 draft = false
 title = 'Tog embroidery machine workshop'
+tags = ['Other']
 +++
 
 ![image](https://assets.galfajon.dev/pictures/tog-towel.jpg)

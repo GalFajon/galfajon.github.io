@@ -15,5 +15,6 @@
         {{ end }}
     </dl>
     {{ .Content }}
+    {{ with .Params.review_url }}<p><a href="{{ . | relURL }}">Read the full review →</a></p>{{ end }}
     <p class="more-link"><a href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a></p>
 {{- end -}}

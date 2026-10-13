@@ -6,6 +6,7 @@
     {{ if .Params.toc | default false }}
         <nav class="toc" aria-label="Table of contents">{{ .TableOfContents }}</nav>
     {{ end }}
+    {{ with .Params.image }}<img class="post-cover" src="{{ . | safeURL }}" alt="{{ $.Params.imageAlt | default $.Title }}">{{ end }}
     {{ .Content }}
     {{ with .Params.tags }}
         <p class="tags">

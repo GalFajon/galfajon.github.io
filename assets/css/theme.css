@@ -211,6 +211,13 @@ ul.entry-list > li:has(> .entry-body:only-child) {
 
 /* ---- blog feed --------------------------------------------------------- */
 
+.post-cover { display: block; width: min(100%, 18rem); height: auto; margin: 1.5em 0; }
+.blog-filters { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1.2em 0 0.3em; }
+.blog-filters a { border: 1px solid var(--rule); padding: 0.3em 0.75em; text-decoration: none; }
+.blog-filters a:hover { text-decoration: underline; }
+.blog-filters a[aria-current="page"] { border-color: var(--border); background: var(--bg-secondary); font-weight: 700; }
+.blog-feed-item[hidden] { display: none; }
+.blog-feed-topic { color: var(--text-secondary); font-size: 0.8rem; margin-left: 1em; }
 .blog-feed-intro { color: var(--text-secondary); margin: 0.8em 0 0; max-width: 38rem; }
 .blog-feed-item {
 	border-bottom: 1px solid var(--rule);

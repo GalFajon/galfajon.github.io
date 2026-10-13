@@ -2,6 +2,7 @@
 date = '2026-10-07T12:00:00+01:00'
 draft = false
 title = 'Gradireland Graduate Careers Fair'
+tags = ['IT']
 +++
 
 ![Gradireland Graduate Careers Fair](https://dublin.ie/wp-content/uploads/WO-GradIreland-Graduate-Careers-Fair22_1200x600.jpg)
