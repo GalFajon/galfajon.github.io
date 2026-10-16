@@ -10,12 +10,8 @@
         <div class="blog-feed-list">
             {{ range .RegularPages.ByDate.Reverse }}
                 {{ $post := . }}
-                {{ $images := findRE `(?m)^!\[[^]]*\]\(([^)]+)\)` .RawContent 1 }}
-                {{ $image := "" }}
-                {{ with .Params.image }}{{ $image = . }}{{ end }}
-                {{ with $images }}
-                    {{ if not $image }}{{ $image = replaceRE `^!\[[^]]*\]\(([^)]+)\)$` "$1" (index . 0) }}{{ end }}
-                {{ end }}
+
+                {{ $image := .Params.image }}
                 <article class="blog-feed-item" data-blog-topic="{{ with .Params.tags }}{{ index . 0 | lower }}{{ else }}other{{ end }}">
                     {{ with $image }}
                         <a class="blog-feed-image" href="{{ $post.RelPermalink }}" aria-label="Read {{ $post.Title }}">

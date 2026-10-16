@@ -3,9 +3,9 @@ date = '2026-10-07T12:00:00+01:00'
 draft = false
 title = 'Gradireland Graduate Careers Fair'
 tags = ['IT']
+image = 'https://dublin.ie/wp-content/uploads/WO-GradIreland-Graduate-Careers-Fair22_1200x600.jpg'
+imageAlt = 'Gradireland Graduate Careers Fair at the RDS'
 +++
-
-![Gradireland Graduate Careers Fair](https://dublin.ie/wp-content/uploads/WO-GradIreland-Graduate-Careers-Fair22_1200x600.jpg)
 
 I went to the [gradireland Graduate Careers Fair](https://gradireland.com/events/gradireland-graduate-careers-fair-2026) at the RDS this week. It was a good chance to meet employers face to face, hear about different career paths, and come away with a few ideas for what to do next.
 

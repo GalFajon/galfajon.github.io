@@ -1,0 +1,21 @@
+<style>
+.care-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 28px 0; }
+.care-comparison figure { min-width: 0; margin: 0; }
+.care-comparison .care-comparison-label { display: block; text-align: center; margin-bottom: 12px; }
+.care-comparison img { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; border-radius: 8px; }
+.care-comparison figcaption { margin-top: 12px; font-size: 0.9em; line-height: 1.6; }
+@media (max-width: 480px) { .care-comparison { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+</style>
+<div class="care-comparison" role="group" aria-label="Owner and sitter dog list comparison">
+  <figure>
+    <strong class="care-comparison-label">Owner view</strong>
+    <a href="{{ .Get "owner" }}" aria-label="View full-size owner screenshot"><img src="{{ .Get "owner" }}" alt="Owner dog list with Bailey and Luna, update previews and current-dog controls" width="780" height="1688" loading="lazy"></a>
+    <figcaption>Owners see their own dogs, preview the latest updates and choose which dog opens after sign-in.</figcaption>
+  </figure>
+  <figure>
+    <strong class="care-comparison-label">Sitter view</strong>
+    <a href="{{ .Get "sitter" }}" aria-label="View full-size sitter screenshot"><img src="{{ .Get "sitter" }}" alt="Sitter care list with dogs grouped by owner and a section for sitting requests" width="780" height="1688" loading="lazy"></a>
+    <figcaption>Sitters see dogs grouped by owner, with sitting requests kept in a separate section.</figcaption>
+  </figure>
+</div>
+

@@ -4,4 +4,4 @@ norss = true
 showDate = false
 toc = false
 +++
-Computer science and mathematics student with six years of experience developing and deploying web applications.
+Computer science and mathematics student at University of Ljubljana, Faculty of Mathematics and Physics. GIS / Web developer at LGB d.o.o. Audio/video technician.

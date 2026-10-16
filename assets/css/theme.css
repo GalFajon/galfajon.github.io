@@ -211,7 +211,7 @@ ul.entry-list > li:has(> .entry-body:only-child) {
 
 /* ---- blog feed --------------------------------------------------------- */
 
-.post-cover { display: block; width: min(100%, 18rem); height: auto; margin: 1.5em 0; }
+.post-cover { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; height: auto; object-fit: cover; object-position: center; margin: 1.5rem auto 2rem; border-radius: 12px; }
 .blog-filters { display: flex; flex-wrap: wrap; gap: 0.5em; margin: 1.2em 0 0.3em; }
 .blog-filters a { border: 1px solid var(--rule); padding: 0.3em 0.75em; text-decoration: none; }
 .blog-filters a:hover { text-decoration: underline; }
@@ -393,3 +393,4 @@ dl.log-facts dd { margin: 0; }
 		gap: 0.35em;
 	}
 }
+
