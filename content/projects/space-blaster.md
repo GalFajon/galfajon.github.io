@@ -2,6 +2,7 @@
 title = "Space Blaster"
 description = "A top-down roguelike shooter built on a custom C# MonoGame engine."
 category = "Game development"
+stack = "C#, MonoGame"
 weight = 80
 showDate = false
 toc = false

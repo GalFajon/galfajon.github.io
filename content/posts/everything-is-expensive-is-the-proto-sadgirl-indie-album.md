@@ -3,6 +3,7 @@ date = '2026-10-13T12:00:00+01:00'
 draft = false
 title = "Esthero's Everything Is Expensive is the proto 2020s sadgirl indie album."
 tags = ["Music"]
+description = "Revisiting Everything Is Expensive by Esthero, an album whose intimate writing and understated production feel surprisingly current."
 image = "https://f4.bcbits.com/img/a0602149306_10.jpg"
 imageAlt = "Cover art for Everything Is Expensive by Esthero"
 +++

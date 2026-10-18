@@ -2,6 +2,7 @@
 title = "Untangle"
 description = "A graph-theory puzzle game for Android, built with Unity."
 category = "Game development"
+stack = "Unity, Android"
 weight = 70
 showDate = false
 toc = false

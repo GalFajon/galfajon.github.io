@@ -2,6 +2,7 @@
 title = "Parking and Access Operations Platform"
 description = "A full-stack platform for parking access, live camera feeds and barrier operations."
 category = "Professional"
+stack = "React, TypeScript, Node.js, PostgreSQL, OpenLayers, go2rtc"
 weight = 20
 showDate = false
 toc = false

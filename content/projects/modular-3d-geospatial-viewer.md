@@ -2,6 +2,7 @@
 title = "Modular 3D Geospatial Viewer"
 description = "A modular web platform for visualising and editing point clouds, BIM models and geospatial data."
 category = "Academic"
+stack = "React, Vite, Three.js, OpenLayers"
 weight = 100
 showDate = false
 toc = false

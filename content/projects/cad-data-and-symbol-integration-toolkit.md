@@ -2,6 +2,7 @@
 title = "CAD Data and Symbol Integration Toolkit"
 description = "A two-way CAD resource conversion toolchain and GeoJSON import plug-in."
 category = "Professional"
+stack = "C# / .NET, AutoCAD, GeoJSON"
 weight = 60
 showDate = false
 toc = false

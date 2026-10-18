@@ -3,6 +3,7 @@ date = '2026-09-24T22:04:28+02:00'
 draft = false
 title = 'Open Source Science meetup on generative programming'
 tags = ['IT']
+description = "What happens when language models become part of ordinary programs? Notes from an Open Source Science meetup on Mellea and generative programming."
 image = 'https://secure.meetupstatic.com/photos/event/2/5/1/6/highres_535929494.webp?w=1080'
 imageAlt = 'Open Source Science meetup on generative programming'
 +++

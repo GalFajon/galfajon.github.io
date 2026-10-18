@@ -2,6 +2,7 @@
 title = "Public-Sector Data Parsing Services"
 description = "Containerised services that transform public-sector PDF documents into structured application data."
 category = "Professional"
+stack = "Node.js, SQLite, JSON APIs"
 weight = 50
 showDate = false
 toc = false

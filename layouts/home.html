@@ -3,6 +3,8 @@
         {{ .Content }}
     </div>
 
+    <hr class="home-bio-divider">
+
     {{ with .Site.GetPage "section" "posts" }}
         {{ partial "home_recent.html" (dict
             "Title" "Latest posts"

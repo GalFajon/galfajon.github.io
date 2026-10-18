@@ -2,6 +2,7 @@
 title = "Property Data Management Application"
 description = "A client application for searching, viewing and entering property records."
 category = "Professional"
+stack = "React, Vite, SOAP / XML"
 weight = 40
 showDate = false
 toc = false

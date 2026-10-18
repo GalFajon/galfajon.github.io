@@ -22,7 +22,6 @@
                         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date.html" .Date }}</time>
                         {{ with .Params.tags }}<span class="blog-feed-topic">{{ index . 0 }}</span>{{ end }}
                         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                        <p>{{ .Plain | htmlUnescape | truncate 190 }}</p>
                         <a class="blog-feed-read" href="{{ .RelPermalink }}">Read post <span aria-hidden="true">→</span></a>
                     </div>
                 </article>

@@ -1,7 +1,8 @@
 +++
 title = "Internal Operations Portal Renovation"
-description = "A modernised company portal with scheduled data pipelines from existing business systems."
+description = "A modernised company portal."
 category = "Professional"
+stack = "Next.js, React, Material UI, Node.js / Express, PostgreSQL / PostGIS, Docker Compose"
 weight = 30
 showDate = false
 toc = false

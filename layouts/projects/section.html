@@ -3,7 +3,7 @@
     {{ .Content }}
 
     {{ $projects := .Pages.ByWeight }}
-    {{ range (slice "Academic" "Professional" "Game development") }}
+    {{ range (slice "Academic" "Professional" "Game development" "Miscellaneous") }}
         {{ $category := . }}
         {{ $items := where $projects "Params.category" $category }}
         {{ with $items }}
@@ -11,7 +11,11 @@
                 <h2>{{ $category }}</h2>
                 <ul class="project-index">
                     {{ range . }}
-                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                        <li>
+                            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                            {{ with .Description }}<p class="project-summary">{{ . }}</p>{{ end }}
+                            {{ with .Params.stack }}<p class="project-stack"><span>Stack</span> {{ . }}</p>{{ end }}
+                        </li>
                     {{ end }}
                 </ul>
             </section>
