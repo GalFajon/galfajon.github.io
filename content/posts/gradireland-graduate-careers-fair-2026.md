@@ -3,7 +3,7 @@ date = '2026-10-07T12:00:00+01:00'
 draft = false
 title = 'Gradireland Graduate Careers Fair'
 tags = ['IT']
-description = "Conversations, career ideas and a few useful lessons from a day at the gradireland Graduate Careers Fair in Dublin."
+description = ""
 image = 'https://dublin.ie/wp-content/uploads/WO-GradIreland-Graduate-Careers-Fair22_1200x600.jpg'
 imageAlt = 'Gradireland Graduate Careers Fair at the RDS'
 +++

@@ -3,7 +3,7 @@ date = '2026-09-27T19:00:00+01:00'
 draft = false
 title = 'Tog embroidery machine workshop'
 tags = ['Other']
-description = "From an Inkscape design to stitches on fabric: an afternoon learning machine embroidery at Tog Hackerspace."
+description = ""
 image = 'https://assets.galfajon.dev/pictures/tog-towel.jpg'
 imageAlt = 'Towel embroidered at the Tog Hackerspace workshop'
 +++
