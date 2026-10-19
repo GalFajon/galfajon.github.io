@@ -1,0 +1,22 @@
+<ul class="post-index">
+    {{ range .Pages }}
+        {{ $post := . }}
+        <li class="post-index-item" data-blog-topic="{{ with .Params.tags }}{{ index . 0 | lower }}{{ else }}other{{ end }}">
+            <article>
+                <div class="post-index-copy">
+                    <p class="post-index-meta">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date.html" .Date }}</time>
+                        {{ with .Params.tags }}<span>{{ index . 0 }}</span>{{ end }}
+                    </p>
+                    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                    {{ with .Description }}<p class="post-index-summary">{{ . }}</p>{{ end }}
+                </div>
+                {{ with .Params.image }}
+                    <a class="post-index-image" href="{{ $post.RelPermalink }}" aria-label="Read {{ $post.Title }}">
+                        <img src="{{ . | safeURL }}" alt="" loading="lazy" decoding="async">
+                    </a>
+                {{ end }}
+            </article>
+        </li>
+    {{ end }}
+</ul>

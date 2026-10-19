@@ -2,16 +2,4 @@
     <div class="home-intro">
         {{ .Content }}
     </div>
-
-    <hr class="home-bio-divider">
-
-    {{ with .Site.GetPage "section" "posts" }}
-        {{ partial "home_recent.html" (dict
-            "Title" "Latest posts"
-            "Pages" (sort .RegularPages "Date" "desc")
-            "Limit" 5
-            "MoreURL" .RelPermalink
-            "MoreText" "View all posts"
-        ) }}
-    {{ end }}
 {{ end }}

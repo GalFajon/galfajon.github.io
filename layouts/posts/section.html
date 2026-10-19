@@ -7,31 +7,12 @@
             <a href="?topic=music" data-blog-filter="music">Music</a>
             <a href="?topic=other" data-blog-filter="other">Other</a>
         </nav>
-        <div class="blog-feed-list">
-            {{ range .RegularPages.ByDate.Reverse }}
-                {{ $post := . }}
-
-                {{ $image := .Params.image }}
-                <article class="blog-feed-item" data-blog-topic="{{ with .Params.tags }}{{ index . 0 | lower }}{{ else }}other{{ end }}">
-                    {{ with $image }}
-                        <a class="blog-feed-image" href="{{ $post.RelPermalink }}" aria-label="Read {{ $post.Title }}">
-                            <img src="{{ . | safeURL }}" alt="" loading="lazy">
-                        </a>
-                    {{ end }}
-                    <div class="blog-feed-copy">
-                        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date.html" .Date }}</time>
-                        {{ with .Params.tags }}<span class="blog-feed-topic">{{ index . 0 }}</span>{{ end }}
-                        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                        <a class="blog-feed-read" href="{{ .RelPermalink }}">Read post <span aria-hidden="true">→</span></a>
-                    </div>
-                </article>
-            {{ end }}
-        </div>
+        {{ partial "post_entries.html" (dict "Pages" .RegularPages.ByDate.Reverse) }}
     </section>
     <script>
         (() => {
             const filters = document.querySelectorAll('[data-blog-filter]');
-            const posts = document.querySelectorAll('[data-blog-topic]');
+            const posts = document.querySelectorAll('.blog-feed [data-blog-topic]');
             const selected = new URLSearchParams(window.location.search).get('topic')?.toLowerCase();
             const topic = ['it', 'music', 'other'].includes(selected) ? selected : 'all';
             filters.forEach(filter => {
