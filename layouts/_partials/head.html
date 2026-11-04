@@ -10,6 +10,7 @@
 {{ end -}}
 
 {{ partialCached "head/css.html" . }}
+{{ with resources.Get "css/chatgpt-draft.css" }}<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
 {{ partialCached "head/js.html" . }}
 
 {{/* MathJax, loaded only on pages that ask for it with `math = true` in the
