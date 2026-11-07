@@ -3,7 +3,7 @@ date = '2026-10-16T12:00:00+01:00'
 draft = false
 title = 'CaraPaws: designing a UI prototype'
 tags = ['IT']
-description = "Designing a warmer way to stay connected to your dog: the screens and visual choices behind our Global Classroom prototype."
+description = "Designing an application prototype."
 image = 'https://assets.galfajon.dev/pictures/carapaws/carapaws-header.png'
 imageAlt = 'CaraPaws welcome screen with owner and sitter options'
 +++
