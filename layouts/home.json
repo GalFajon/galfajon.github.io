@@ -1,0 +1,11 @@
+{{- $pages := slice -}}
+{{- range where site.RegularPages "Params.excludeFromSearch" "!=" true -}}
+    {{- $pages = $pages | append (dict
+        "title" .Title
+        "permalink" .RelPermalink
+        "date" (partial "date.html" .Date)
+        "tags" (.Params.tags | default slice)
+        "text" (printf "%s %s %s %s" (.Plain | plainify | htmlUnescape) (.Params.author | default "") (.Params.artist | default "") (.Params.album | default ""))
+    ) -}}
+{{- end -}}
+{{- dict "pages" $pages | jsonify -}}

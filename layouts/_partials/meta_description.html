@@ -1,0 +1,6 @@
+{{- /* A page's description tag: the explicit one if set, else the summary with
+       entities decoded and all whitespace collapsed, so the tag holds one
+       clean line of text. */ -}}
+{{- $text := .Params.description | default .Summary | plainify | htmlUnescape -}}
+{{- $text = $text | replaceRE `\s+` " " -}}
+{{- trim $text " " | truncate 160 -}}

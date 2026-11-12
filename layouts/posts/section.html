@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <section class="blog-feed" aria-labelledby="blog-feed-title">
+        <h1 id="blog-feed-title">Blog</h1>
+        <nav class="blog-filters" aria-label="Filter blog posts">
+            <a href="{{ .RelPermalink }}" data-blog-filter="featured" aria-current="page">Featured</a>
+            <a href="?topic=all" data-blog-filter="all">All</a>
+            <a href="?topic=it" data-blog-filter="it">IT</a>
+            <a href="?topic=music" data-blog-filter="music">Music</a>
+            <a href="?topic=other" data-blog-filter="other">Other</a>
+        </nav>
+        {{ partial "post_entries.html" (dict "Pages" .RegularPages.ByDate.Reverse "FeaturedDefault" true) }}
+    </section>
+    <script>
+        (() => {
+            const filters = document.querySelectorAll('[data-blog-filter]');
+            const posts = document.querySelectorAll('.blog-feed [data-blog-topic]');
+            const selected = new URLSearchParams(window.location.search).get('topic')?.toLowerCase();
+            const topic = ['all', 'it', 'music', 'other'].includes(selected) ? selected : 'featured';
+            filters.forEach(filter => {
+                if (filter.dataset.blogFilter === topic) filter.setAttribute('aria-current', 'page');
+                else filter.removeAttribute('aria-current');
+            });
+            posts.forEach(post => { post.hidden = topic === 'featured' ? post.dataset.blogTopic === 'music' : topic !== 'all' && post.dataset.blogTopic !== topic; });
+        })();
+    </script>
+{{ end }}

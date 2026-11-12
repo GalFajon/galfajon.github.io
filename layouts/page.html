@@ -1,0 +1,11 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.showDate | default true }}
+        <p class="post-date">{{ partial "date.html" .Date }}</p>
+    {{ end }}
+    {{ if .Params.toc | default false }}
+        <nav class="toc" aria-label="Table of contents">{{ .TableOfContents }}</nav>
+    {{ end }}
+    {{ with .Params.image }}<img class="post-cover" src="{{ . | safeURL }}" alt="{{ $.Params.imageAlt | default $.Title }}">{{ end }}
+    {{ .Content }}
+{{ end }}

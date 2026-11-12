@@ -1,0 +1,7 @@
+{{ define "main" }}
+    <article class="project-detail">
+        <p class="back-link"><a href="{{ "/projects/" | relURL }}">&larr; Projects</a></p>
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+    </article>
+{{ end }}

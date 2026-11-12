@@ -1,0 +1,23 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+    {{ $projects := where .Pages.ByWeight "Params.selected" "ne" false }}
+    {{ range (slice "Spatial" "Mobile Apps" "Game development" "Miscellaneous") }}
+        {{ $category := . }}
+        {{ $items := where $projects "Params.category" $category }}
+        {{ with $items }}
+            <section class="project-group">
+                <h2>{{ $category }}</h2>
+                <ul class="project-index">
+                    {{ range . }}
+                        <li>
+                            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                            {{ with .Description }}<p class="project-summary">{{ . }}</p>{{ end }}
+                        </li>
+                    {{ end }}
+                </ul>
+            </section>
+        {{ end }}
+    {{ end }}
+{{ end }}

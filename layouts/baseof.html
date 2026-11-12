@@ -1,0 +1,45 @@
+{{/* Overrides the theme's baseof so the masthead and nav appear on every page,
+     not just the home page, and so the footer credit keeps the site's own
+     copyright line. */}}
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <main>
+        <div class="w">
+            {{ partial "site_header.html" . }}
+            <div id="content">
+                {{ block "main" . }}{{ end }}
+            </div>
+            {{ partial "site_footer.html" . }}
+        </div>
+    </main>
+
+    <button class="theme-toggle" aria-label="Switch between light and dark theme">
+        <svg viewBox="0 0 32 32" width="24" height="24" fill="currentcolor" aria-hidden="true" focusable="false">
+            <circle cx="16" cy="16" r="14" fill="none" stroke="currentcolor" stroke-width="4"></circle>
+            <path d="M 16 0 A 16 16 0 0 0 16 32 z"></path>
+        </svg>
+    </button>
+
+    {{ with resources.Get "js/theme.js" }}
+        {{ $opts := dict
+            "minify" (not hugo.IsDevelopment)
+            "sourceMap" (cond hugo.IsDevelopment "external" "")
+            "targetPath" "js/theme.js"
+        }}
+        {{ with . | js.Build $opts }}
+            {{ if hugo.IsDevelopment }}
+                <script src="{{ .RelPermalink }}"></script>
+            {{ else }}
+                {{ with . | fingerprint }}
+                    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</body>
+</html>

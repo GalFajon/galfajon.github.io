@@ -1,0 +1,37 @@
+/* Site palette inspired by the user's ChatGPT desktop appearance. */
+:root, html[data-theme="light"], html[data-theme="dark"], html:not([data-theme="light"]) {
+  --bg: #22242f;
+  --bg-secondary: #30323d;
+  --text: #ececf0;
+  --text-secondary: #afb0bb;
+  --headings: #f5f4f5;
+  --links: #ececf0;
+  --border: #ececf0;
+  --rule: #393b47;
+  --code-text: #ececf0;
+  --highlight: #48414d;
+  --focus: #ffffff;
+}
+
+body {
+  line-height: 1.8;
+}
+
+.w { max-width: 760px; padding-top: 3.5rem; }
+.masthead .site-title { font-size: 1.45rem; letter-spacing: -0.035em; }
+.site-quote { color: var(--text-secondary); }
+.masthead nav a { text-underline-offset: 0.25em; }
+.masthead nav a[aria-current] { color: var(--headings); }
+.dashed { border-top-style: solid; }
+a { text-underline-offset: 0.2em; }
+a:hover { color: #ffffff; }
+blockquote, pre, .search-form input { background: var(--bg-secondary); }
+blockquote { border-left-color: var(--border); border-radius: 0 8px 8px 0; padding: 0.8em 1.2em; }
+pre, .search-form input { border-color: var(--rule); border-radius: 8px; }
+.tag { border-radius: 5px; }
+.theme-toggle { display: none; }
+::selection { background: #555864; color: #fff; }
+
+@media screen and (max-width: 500px) {
+  .w { padding: 2rem 1.25rem; }
+}

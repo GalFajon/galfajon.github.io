@@ -1,0 +1,134 @@
+{
+  "demo": {
+    "name": "Demo",
+    "minimap": {
+      "projection": "EPSG:3857",
+      "center": [0, 0],
+      "zoom": 2,
+      "layers": [
+        {
+          "type": "OSM"
+        }
+      ]
+    },
+    "layers": {
+      "sample-geometry": {
+        "type": "GeometryLayer",
+        "name": "Sample geometry",
+        "editable": true,
+        "selectable": true,
+        "assets": [
+          {
+            "type": "geojson",
+            "data": {
+              "type": "FeatureCollection",
+              "features": [
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Building footprint"
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          462000,
+                          101000,
+                          300
+                        ],
+                        [
+                          462060,
+                          101000,
+                          300
+                        ],
+                        [
+                          462060,
+                          101045,
+                          300
+                        ],
+                        [
+                          462000,
+                          101045,
+                          300
+                        ],
+                        [
+                          462000,
+                          101000,
+                          300
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Path"
+                  },
+                  "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                      [
+                        461980,
+                        100980,
+                        300
+                      ],
+                      [
+                        462030,
+                        101020,
+                        302
+                      ],
+                      [
+                        462090,
+                        101010,
+                        304
+                      ],
+                      [
+                        462120,
+                        101060,
+                        306
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Point A"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      462015,
+                      101015,
+                      305
+                    ]
+                  }
+                },
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "name": "Point B"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                      462075,
+                      101035,
+                      305
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "template": {
+    "name": "Template",
+    "layers": {}
+  }
+}

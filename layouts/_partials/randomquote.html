@@ -1,0 +1,5 @@
+{{ $quotes := where (hugo.Data.quotes.quotes | default slice) "!=" "" }}
+{{ with $quotes }}
+    {{ $random := index . (mod now.Unix (len .)) }}
+    <p class="site-quote"><small>{{ $random }}</small></p>
+{{ end }}

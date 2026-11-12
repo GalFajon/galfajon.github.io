@@ -1,0 +1,11 @@
+{{/* `.Site.Params.Author` is a map here ([params.author] carries name and
+     email, as the RSS templates require), so print the name field. */}}
+<meta name="author" content="{{ site.Params.Author.name | default site.Params.Author }}" />
+{{ if .IsPage }}
+    {{ with .Params.tags }}
+        <meta name="keywords" content='{{ delimit (sort .) ", "}}' />
+    {{ end }}
+    <meta name="description" content="{{ partial "meta_description.html" . }}" />
+{{ else }}
+    <meta name="description" content="{{ .Params.description | default site.Params.description }}" />
+{{ end }}

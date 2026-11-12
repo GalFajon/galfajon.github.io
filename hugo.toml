@@ -1,0 +1,75 @@
+baseURL = "https://galfajon.github.io/"
+theme = "moonwalk-hugo"
+locale = "en"
+defaultContentLanguage = "en"
+title = "Gal Fajon"
+
+# printed in the footer after the current year, followed by the (c) symbol
+copyright = "Gal Fajon"
+
+summaryLength = 70  # number of words for article summaries
+
+[pagination]
+    pagerSize = 10  # number of articles per page in the blog list
+
+[params]
+    # meta description search engines show under the result
+    description = "Gal Fajon — Software engineer"
+
+    # Google wants an indexable favicon that is a square multiple of 48px, so
+    # rel="icon" points at the 192px raster rather than the 32x32 one
+    favicon = "/android-chrome-192x192.png"
+    faviconIco = "/favicon.ico"  # 32x32
+    appletouch = "/apple-touch-icon.png"  # 180x180
+    icon512 = "/android-chrome-512x512.png"  # used as the OpenGraph image
+
+    [params.author]
+    name = "Gal Fajon"
+    email = "contact@galfajon.dev"  # web master field in the RSS feed
+
+[menus]
+    [[menus.main]]
+        identifier = "posts"
+        name = "Blog"
+        pageRef = "/posts"
+        weight = 1
+
+    [[menus.main]]
+        identifier = "projects"
+        name = "Projects"
+        pageRef = "/projects"
+        weight = 2
+
+    [[menus.main]]
+        identifier = "cv"
+        name = "CV"
+        url = "https://assets.galfajon.dev/cv/cv.pdf"
+        weight = 3
+
+    [[menus.main]]
+        identifier = "search"
+        name = "Search"
+        pageRef = "/search"
+        weight = 5
+
+    [[menus.main]]
+        identifier = "rss"
+        name = "RSS"
+        url = "/index.xml"
+        weight = 6
+
+# the JSON index the search page fetches
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+# hand LaTeX between these delimiters straight through to MathJax instead of
+# letting goldmark mangle it (the MathJax script itself is loaded in
+# layouts/_partials/head.html, only on pages with math = true)
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.extensions]
+            [markup.goldmark.extensions.passthrough]
+                enable = true
+                [markup.goldmark.extensions.passthrough.delimiters]
+                    block = [['\[', '\]'], ['$$', '$$']]
+                    inline = [['\(', '\)'], ['$', '$']]
